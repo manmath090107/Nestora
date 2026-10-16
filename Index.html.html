@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nestora – Everything you need, delivered monthly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6ee;--surface:#fff;--ink:#1b2a22;--muted:#5c6b62;--green:#1f4d3a;--green-ink:#fff;--kraft:#d3b184;--sun:#f2a93b;--line:#e4dccb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a15;--surface:#18271f;--ink:#f1ede3;--muted:#a3b1a8;--green:#4f9c78;--green-ink:#08130d;--kraft:#8a6f4a;--line:#2a3d33;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101a15;--surface:#18271f;--ink:#f1ede3;--muted:#a3b1a8;--green:#4f9c78;--green-ink:#08130d;--kraft:#8a6f4a;--line:#2a3d33;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{line-height:1.1;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,7vw,4.8rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:.6rem}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:.4rem 0;max-width:62ch}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:1.4rem;color:var(--green);text-decoration:none}
+nav a{color:var(--ink);text-decoration:none;margin-left:20px;font-size:.95rem}
+nav a.btn{color:var(--green-ink)}
+.btn{display:inline-block;background:var(--green);color:var(--green-ink);padding:12px 22px;border-radius:999px;font:600 1rem inherit;border:0;cursor:pointer;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:56px 0 72px}
+.hero p.lead{font-size:1.2rem;color:var(--muted);margin:18px 0 26px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+/* the box */
+.box{background:var(--kraft);border-radius:14px;padding:18px;box-shadow:0 18px 0 -8px rgba(0,0,0,.18)}
+.box h3{color:#1b2a22;display:flex;justify-content:space-between;align-items:baseline}
+.items{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+.item{background:var(--surface);color:var(--ink);border:2px solid transparent;border-radius:10px;padding:10px 12px;text-align:left;cursor:pointer;font:inherit;display:flex;justify-content:space-between;gap:8px;transition:transform .15s,border-color .15s}
+.item small{color:var(--muted)}
+.item[aria-pressed="true"]{border-color:var(--green);transform:translateY(-3px)}
+.item[aria-pressed="true"]::before{content:"✓";color:var(--green);font-weight:800}
+.total{background:var(--green);color:var(--green-ink);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;font-weight:600}
+.note{font-size:.85rem;color:#1b2a22;margin-top:8px}
+/* grids */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card p{color:var(--muted)}
+.band{background:var(--green);color:var(--green-ink)}
+.band p{color:inherit;opacity:.9}
+.stat{font-size:3rem;font-weight:800;line-height:1}
+.steps{counter-reset:s;list-style:none;padding:0;margin:28px 0 0;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.steps li{counter-increment:s;border-top:4px solid var(--kraft);padding-top:14px}
+.steps li::before{content:"Step " counter(s);display:block;color:var(--muted);font-size:.9rem}
+.plan{display:flex;flex-direction:column;gap:8px}
+.plan.pop{border:2px solid var(--green)}
+.price{font-size:2.2rem;font-weight:800}
+.price small{font-size:1rem;font-weight:400;color:var(--muted)}
+.plan ul{padding-left:18px;margin:6px 0 14px;color:var(--muted)}
+.tag{align-self:flex-start;background:var(--sun);color:#1b2a22;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:999px}
+table{width:100%;border-collapse:collapse;margin-top:24px;background:var(--surface);border-radius:12px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+.scroll{overflow-x:auto}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font-weight:600;cursor:pointer}
+footer{padding:32px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}nav a:not(.btn){display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#top">Nestora</a>
+<div><a href="#how">How it works</a><a href="#plans">Plans</a><a href="#faq">FAQ</a><a class="btn" href="#join">Join the waitlist</a></div></div></nav>
+
+<main id="top">
+<div class="wrap hero">
+  <div>
+    <h1>Your month's essentials, in one box.</h1>
+    <p class="lead">Nestora delivers affordable, customizable monthly essentials to students and young professionals living away from home. Pick what you use, we deliver it to your hostel or PG door.</p>
+    <div class="row"><a class="btn" href="#join">Join the waitlist</a><a class="btn alt" href="#plans">See plans</a></div>
+  </div>
+  <div class="box" aria-label="Try building a box">
+    <h3>Build your box <span id="count">0 items</span></h3>
+    <div class="items" id="items"></div>
+    <div class="total"><span>Estimated monthly total</span><span id="sum">₹0</span></div>
+    <p class="note" id="hint">Tap items to add them. Prices are samples.</p>
+  </div>
+</div>
+
+<section class="band"><div class="wrap">
+  <h2>Running out of shampoo on a Sunday night is a bad way to start the week.</h2>
+  <p>Students living away from home buy the same things again and again, forget items, and spend more than planned. Parents worry. Small suppliers miss out on recurring sales. Nestora puts all of it on a monthly schedule.</p>
+  <div class="grid">
+    <div><div class="stat">70%+</div><p>of students repeat-buy daily-use essentials every month</p></div>
+    <div><div class="stat">8 of 10</div><p>prototype testers liked or loved the app</p></div>
+    <div><div class="stat">7 of 10</div><p>interviewees were unhappy with how they buy essentials today</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><h3>Pick your plan</h3><p>Basic, Standard or Premium, based on your budget.</p></li>
+    <li><h3>Customize your box</h3><p>Personal care, snacks, stationery, laundry and household items. Add or remove anything.</p></li>
+    <li><h3>Get it every month</h3><p>Choose a delivery schedule, track your order, pause or cancel when you need to.</p></li>
+  </ol>
+</div></section>
+
+<section id="plans" style="background:var(--surface)"><div class="wrap">
+  <h2>Plans that fit a student budget</h2>
+  <div class="grid">
+    <div class="card plan"><h3>Basic</h3><div class="price">₹799<small> / month</small></div><p>Essentials for everyday living.</p><ul><li>Core personal care and household items</li><li>Doorstep delivery</li></ul><a class="btn alt" href="#join">Choose Basic</a></div>
+    <div class="card plan pop"><span class="tag">Most popular</span><h3>Standard</h3><div class="price">₹1,099<small> / month</small></div><p>More variety, more value.</p><ul><li>Everything in Basic</li><li>Snacks and stationery</li><li>Customize your box</li></ul><a class="btn" href="#join">Choose Standard</a></div>
+    <div class="card plan"><h3>Premium</h3><div class="price">₹1,499<small> / month</small></div><p>Everything you need, nothing you forgot.</p><ul><li>Everything in Standard</li><li>Larger quantities and brands of your choice</li></ul><a class="btn alt" href="#join">Choose Premium</a></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Why not just use a quick-commerce app?</h2>
+  <p>Quick-commerce apps are fast. They are not planned. Nestora is built around the monthly routine.</p>
+  <div class="scroll"><table>
+    <tr><th></th><th>Nestora</th><th>Quick-commerce apps</th><th>Supermarket trips</th></tr>
+    <tr><td>Curated monthly box</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Personalized to you</td><td>Yes</td><td>Limited</td><td>No</td></tr>
+    <tr><td>Fixed monthly budget</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Doorstep delivery</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+  </table></div>
+</div></section>
+
+<section style="background:var(--surface)"><div class="wrap">
+  <h2>Good for you, and a little better for the planet</h2>
+  <div class="grid">
+    <div class="card"><h3>Save time</h3><p>One order instead of repeated shopping trips.</p></div>
+    <div class="card"><h3>Stay in budget</h3><p>Know your monthly spend before the month starts.</p></div>
+    <div class="card"><h3>Less stress</h3><p>Never run out of the basics again. Parents relax too.</p></div>
+    <div class="card"><h3>Less waste</h3><p>Fewer trips, bulk buying and less packaging.</p></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Where do you deliver?</summary><p>We are starting in Vadodara, near colleges, hostels and PGs, then expanding across Gujarat.</p></details>
+  <details><summary>Can I change what's in my box?</summary><p>Yes. Customize your items before each delivery.</p></details>
+  <details><summary>Can I pause or cancel?</summary><p>Flexible pausing and cancellation is part of our plan, based on tester feedback.</p></details>
+  <details><summary>Is the app live?</summary><p>Not yet. This is an early preview and a Figma prototype. Join the waitlist to hear first.</p></details>
+</div></section>
+
+<section id="join" class="band"><div class="wrap">
+  <h2>Be first to get a Nestora box</h2>
+  <p>Tell us what you'd want in yours. This opens your email app with a ready message.</p>
+  <div class="row" style="margin-top:18px"><a class="btn" id="mail" style="background:var(--sun);color:#1b2a22" href="mailto:hello@nestora.example">Join the waitlist</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">Nestora · GSFC University, Vadodara, Gujarat · Venture supported by Wadhwani Foundation</div></footer>
+
+<script>
+const ITEMS=[["Face wash",120],["Shampoo",150],["Toothpaste",80],["Soap",60],["Detergent",180],["Chips",80],["Notebook",50],["Dishwash",90]];
+const picked=new Set();
+const list=document.getElementById('items');
+ITEMS.forEach(([n,p],i)=>{const b=document.createElement('button');b.className='item';b.type='button';b.setAttribute('aria-pressed','false');
+b.innerHTML='<span>'+n+'</span><small>₹'+p+'</small>';
+b.onclick=()=>{picked.has(i)?picked.delete(i):picked.add(i);b.setAttribute('aria-pressed',picked.has(i));update()};list.appendChild(b)});
+function update(){
+ let s=0;picked.forEach(i=>s+=ITEMS[i][1]);
+ document.getElementById('count').textContent=picked.size+(picked.size===1?' item':' items');
+ document.getElementById('sum').textContent='₹'+s;
+ const h=document.getElementById('hint');
+ h.textContent=!s?'Tap items to add them. Prices are samples.':s<=600?'Fits our Basic plan (₹799).':s<=900?'Fits our Standard plan (₹1,099).':'Fits our Premium plan (₹1,499).';
+ const items=[...picked].map(i=>ITEMS[i][0]).join(', ');
+ document.getElementById('mail').href='mailto:hello@nestora.example?subject='+encodeURIComponent('Nestora waitlist')+'&body='+encodeURIComponent('Hi Nestora, I want to join the waitlist.\nMy box: '+(items||'(not chosen yet)'));
+}
+</script>
+</body>
+</html>
